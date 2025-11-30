@@ -1,0 +1,26 @@
+grafana:
+  adminUser: admin
+  adminPassword: admin
+  service:
+    type: ClusterIP
+
+prometheus:
+  prometheusSpec:
+    retention: 2d
+    resources:
+      requests:
+        cpu: "200m"
+        memory: "512Mi"
+      limits:
+        cpu: "1"
+        memory: "1Gi"
+
+alertmanager:
+  alertmanagerSpec:
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "256Mi"
+      limits:
+        cpu: "500m"
+        memory: "512Mi"

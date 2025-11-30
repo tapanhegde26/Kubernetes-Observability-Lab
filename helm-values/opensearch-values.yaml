@@ -1,0 +1,23 @@
+singleNode: true
+replicas: 1
+
+resources:
+  requests:
+    cpu: "200m"
+    memory: "512Mi"
+  limits:
+    cpu: "1"
+    memory: "1Gi"
+
+persistence:
+  enabled: false
+
+# Important: set initial admin password
+extraEnvs:
+  - name: OPENSEARCH_INITIAL_ADMIN_PASSWORD
+    value: "Admin123#StrongPass"
+
+securityConfig:
+  enabled: false
+opensearchSecurity:
+  enabled: false
